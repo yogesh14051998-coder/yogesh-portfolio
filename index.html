@@ -198,7 +198,7 @@
     /* ── SERVICES ── */
     #services { background: var(--bg-soft); }
     .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.4rem;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem;
     }
     .svc {
       background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
@@ -213,12 +213,6 @@
     }
     .svc h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: .6rem; }
     .svc p { color: var(--muted); font-size: .92rem; }
-    .svc .price {
-      display: inline-block; margin-top: 1.3rem;
-      font-size: .8rem; font-weight: 700; color: var(--amber);
-      background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.25);
-      padding: .3rem .85rem; border-radius: 50px;
-    }
 
     /* ── SKILLS ── */
     #skills { background: var(--bg); }
@@ -316,7 +310,7 @@
 
     /* ── CERTIFICATIONS ── */
     #certs { background: var(--bg); }
-    .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.3rem; }
+    .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
     .cert {
       background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
       padding: 1.7rem; display: flex; gap: 1rem; align-items: flex-start;
@@ -386,6 +380,8 @@
       .feature { grid-template-columns: 1fr; }
       .about-wrap { grid-template-columns: 1fr; }
       .browser { transform: none; }
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
       .nav-links { display: none; }
@@ -394,6 +390,8 @@
       .feature::before { left: 1.8rem; }
       .fab-body { flex-direction: column; align-items: flex-start; }
       .fab-portrait { width: 100%; height: 170px; }
+      .certs-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -465,7 +463,6 @@
         <div class="svc-ic">🔍</div>
         <h3>SEO Optimization</h3>
         <p>On-page SEO for WordPress &amp; blog posts — keyword research, meta tags, schema markup, internal linking, and speed.</p>
-        <span class="price">From $100 / post</span>
       </div>
       <div class="svc reveal">
         <div class="svc-ic">📈</div>
@@ -481,6 +478,21 @@
         <div class="svc-ic">🛠️</div>
         <h3>Technical Support</h3>
         <p>Bug fixes, site maintenance, troubleshooting, clear documentation, and reliable handoff. I keep things running.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ic">🐍</div>
+        <h3>Python Development</h3>
+        <p>Automation scripts, web scraping, data processing, and backend utilities — from quick one-off scripts to full data pipelines.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ic">💻</div>
+        <h3>App Development</h3>
+        <p>Desktop and cross-platform applications in Java and C/C++ — well-structured, documented, and built around your workflow.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ic">🗄️</div>
+        <h3>Database &amp; Backend</h3>
+        <p>Database schema design, SQL queries, REST API integration, and server-side logic to power your web and mobile apps.</p>
       </div>
     </div>
   </section>
@@ -503,6 +515,10 @@
       <span class="skill"><span class="d"></span>Google Analytics</span>
       <span class="skill"><span class="d"></span>Search Console</span>
       <span class="skill"><span class="d"></span>Google Ads</span>
+      <span class="skill"><span class="d"></span>Python</span>
+      <span class="skill"><span class="d"></span>Java</span>
+      <span class="skill"><span class="d"></span>C / C++</span>
+      <span class="skill"><span class="d"></span>SQL / Databases</span>
       <span class="skill"><span class="d"></span>Git &amp; GitHub</span>
       <span class="skill"><span class="d"></span>Vercel</span>
       <span class="skill"><span class="d"></span>Responsive Design</span>
@@ -589,15 +605,15 @@
       </div>
 
       <!-- Placeholder project 1 -->
-      <div class="proj reveal">
-        <div class="proj-top" style="background:linear-gradient(135deg,#6366f1,#22d3ee);">
-          <span class="badge soon">COMING SOON</span>⚡
+      <div class="proj reveal" style="opacity:.5;filter:grayscale(.4);">
+        <div class="proj-top" style="background:linear-gradient(135deg,#1c2030,#252d42);">
+          <span class="badge soon">COMING SOON</span>🔧
         </div>
         <div class="proj-body">
-          <span class="kw">WORDPRESS</span>
-          <h3>Your Next WordPress Build</h3>
-          <p>A placeholder for your next project — swap in the name, description, and links once it's live.</p>
-          <div class="proj-tags"><span>WordPress</span><span>Elementor</span><span>SEO</span></div>
+          <span class="kw" style="color:var(--muted)">PROJECT 02</span>
+          <h3>In Progress</h3>
+          <p>Currently working on the next build — details and links will be added once it ships.</p>
+          <div class="proj-tags"><span>Web Design</span><span>SEO</span><span>Deploy</span></div>
           <div class="proj-links">
             <a class="btn-sm solid disabled" href="#">Live Demo ↗</a>
             <a class="btn-sm disabled" href="#">GitHub</a>
@@ -606,14 +622,14 @@
       </div>
 
       <!-- Placeholder project 2 -->
-      <div class="proj reveal">
-        <div class="proj-top" style="background:linear-gradient(135deg,#f59e0b,#ef4444);">
+      <div class="proj reveal" style="opacity:.5;filter:grayscale(.4);">
+        <div class="proj-top" style="background:linear-gradient(135deg,#1c2030,#252d42);">
           <span class="badge soon">COMING SOON</span>🔍
         </div>
         <div class="proj-body">
-          <span class="kw">SEO · GOOGLE ADS</span>
-          <h3>Your Next SEO / Ads Win</h3>
-          <p>A placeholder for an SEO or Google Ads case study — add the client, the results, and a link.</p>
+          <span class="kw" style="color:var(--muted)">PROJECT 03</span>
+          <h3>In Progress</h3>
+          <p>Next project coming soon — swap in the name, description, and links once it's live.</p>
           <div class="proj-tags"><span>SEO</span><span>Google Ads</span><span>Analytics</span></div>
           <div class="proj-links">
             <a class="btn-sm solid disabled" href="#">Case Study ↗</a>
@@ -726,7 +742,7 @@
       <p>Whether it's one blog post that needs SEO or a full website build and deploy, I'd love to hear about it. Drop me a line and I'll get back to you quickly.</p>
       <div class="contact-actions">
         <a href="mailto:yogesh14051998@gmail.com?subject=Project%20Inquiry" class="btn btn-primary">✉ Email Me</a>
-        <a href="tel:+919791858063" class="btn btn-ghost">📞 Call / WhatsApp</a>
+        <a href="https://wa.me/919791858063" target="_blank" rel="noopener" class="btn btn-ghost">💬 WhatsApp Me</a>
       </div>
       <div class="contact-detail">
         <a href="mailto:yogesh14051998@gmail.com"><span class="ic">✉</span> yogesh14051998@gmail.com</a>
