@@ -320,18 +320,20 @@
     .cert {
       background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
       padding: 1.7rem; display: flex; gap: 1rem; align-items: flex-start;
-      transition: border-color .25s, transform .25s; position: relative;
+      transition: border-color .25s, transform .25s, background .25s; position: relative;
+      text-decoration: none; color: var(--text);
     }
-    .cert:hover { border-color: rgba(99,102,241,.5); transform: translateY(-4px); }
+    .cert:hover { border-color: rgba(99,102,241,.5); transform: translateY(-4px); background: var(--card-hi); }
     .cert-ic {
       width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
       display: grid; place-items: center; font-size: 1.3rem;
       background: rgba(34,211,238,.1); border: 1px solid rgba(34,211,238,.22);
     }
-    .cert h3 { font-size: 1rem; font-weight: 600; margin-bottom: .25rem; }
+    .cert-info { display: flex; flex-direction: column; }
+    .cert h3 { font-size: 1rem; font-weight: 600; margin-bottom: .3rem; line-height: 1.3; }
     .cert .issuer { color: var(--muted); font-size: .85rem; }
-    .cert.placeholder h3, .cert.placeholder .issuer { font-style: italic; color: var(--muted); }
-    .cert .tagph { position: absolute; top: .9rem; right: 1rem; font-size: .62rem; font-weight: 700; letter-spacing: 1px; color: var(--amber); background: rgba(251,191,36,.12); border: 1px dashed rgba(251,191,36,.4); padding: .15rem .5rem; border-radius: 5px; }
+    .cert .verify { margin-top: .7rem; font-size: .78rem; font-weight: 600; color: var(--cyan); display: inline-flex; align-items: center; gap: .3rem; }
+    .cert:hover .verify { color: var(--white); }
 
     /* ── ABOUT ── */
     #about { background: var(--bg-soft); }
@@ -363,7 +365,7 @@
     .contact-box p { color: var(--muted); margin: 1rem auto 2rem; max-width: 500px; position:relative; }
     .contact-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; position:relative; }
     .contact-detail { margin-top: 2.2rem; display:flex; flex-wrap:wrap; gap:1.6rem; justify-content:center; position:relative; }
-    .contact-detail a { color: var(--text); text-decoration: none; font-size:.92rem; display:inline-flex; align-items:center; gap:.5rem; transition: color .2s; }
+    .contact-detail a, .contact-detail .loc { color: var(--text); text-decoration: none; font-size:.92rem; display:inline-flex; align-items:center; gap:.5rem; transition: color .2s; }
     .contact-detail a:hover { color: var(--cyan); }
     .contact-detail .ic { color: var(--indigo); }
 
@@ -579,8 +581,7 @@
           <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span></div>
           <div class="proj-links">
             <a class="btn-sm solid" href="https://fabiola-landing-omega.vercel.app/" target="_blank" rel="noopener">Live Demo ↗</a>
-            <!-- Add your GitHub repo link here when ready -->
-            <a class="btn-sm" href="#" title="Add your GitHub link">GitHub</a>
+            <a class="btn-sm" href="https://github.com/yogesh14051998-coder/fabiola-landing" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </div>
       </div>
@@ -627,35 +628,50 @@
     <div class="sec-head reveal">
       <span class="sec-tag">Credentials</span>
       <h2 class="sec-title">Certifications</h2>
-      <p class="sec-sub">A few credentials that back up the work. Placeholders below — swap in your real certificates and issuers.</p>
+      <p class="sec-sub">Verified credentials in programming, data, and analysis. Click any card to verify it.</p>
     </div>
 
-    <!--
-      EDIT ME: Replace each placeholder with a real certification.
-      Common, relevant ones for your field: Google Ads Search/Display, Google Analytics (GA4),
-      HubSpot SEO / Content Marketing, Meta Certified Digital Marketing, Yoast SEO, freeCodeCamp.
-    -->
     <div class="certs-grid">
-      <div class="cert placeholder reveal">
-        <span class="tagph">EDIT</span>
-        <div class="cert-ic">🎓</div>
-        <div><h3>Certification Title</h3><div class="issuer">Issuing Organization · 20XX</div></div>
-      </div>
-      <div class="cert placeholder reveal">
-        <span class="tagph">EDIT</span>
-        <div class="cert-ic">📜</div>
-        <div><h3>Certification Title</h3><div class="issuer">Issuing Organization · 20XX</div></div>
-      </div>
-      <div class="cert placeholder reveal">
-        <span class="tagph">EDIT</span>
-        <div class="cert-ic">🏅</div>
-        <div><h3>Certification Title</h3><div class="issuer">Issuing Organization · 20XX</div></div>
-      </div>
-      <div class="cert placeholder reveal">
-        <span class="tagph">EDIT</span>
-        <div class="cert-ic">✅</div>
-        <div><h3>Certification Title</h3><div class="issuer">Issuing Organization · 20XX</div></div>
-      </div>
+      <a class="cert reveal" href="https://www.coursera.org/account/accomplishments/verify/6WTZE5Z6R5DM" target="_blank" rel="noopener">
+        <div class="cert-ic">💻</div>
+        <div class="cert-info">
+          <h3>Introduction to Programming with MATLAB</h3>
+          <div class="issuer">Vanderbilt University · Coursera · 2020</div>
+          <span class="verify">Verify ↗</span>
+        </div>
+      </a>
+      <a class="cert reveal" href="https://www.coursera.org/account/accomplishments/verify/L9675UM4A2E8" target="_blank" rel="noopener">
+        <div class="cert-ic">📊</div>
+        <div class="cert-info">
+          <h3>Exploratory Data Analysis with MATLAB</h3>
+          <div class="issuer">MathWorks · Coursera · 2020</div>
+          <span class="verify">Verify ↗</span>
+        </div>
+      </a>
+      <a class="cert reveal" href="https://www.myamcat.com/certificate/11897443/software-development-trainee/166" target="_blank" rel="noopener">
+        <div class="cert-ic">🛠️</div>
+        <div class="cert-info">
+          <h3>Software Development Trainee</h3>
+          <div class="issuer">AMCAT · Aspiring Minds · 2019</div>
+          <span class="verify">Verify ↗</span>
+        </div>
+      </a>
+      <a class="cert reveal" href="https://www.myamcat.com/certificate/11897443/business-analyst/94" target="_blank" rel="noopener">
+        <div class="cert-ic">📈</div>
+        <div class="cert-info">
+          <h3>Business Analyst</h3>
+          <div class="issuer">AMCAT · Aspiring Minds · 2019</div>
+          <span class="verify">Verify ↗</span>
+        </div>
+      </a>
+      <a class="cert reveal" href="https://www.myamcat.com/certificate/11897443/business-consultant/247" target="_blank" rel="noopener">
+        <div class="cert-ic">💼</div>
+        <div class="cert-info">
+          <h3>Business Consultant</h3>
+          <div class="issuer">AMCAT · Aspiring Minds · 2019</div>
+          <span class="verify">Verify ↗</span>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -705,7 +721,7 @@
       <div class="contact-detail">
         <a href="mailto:yogesh14051998@gmail.com"><span class="ic">✉</span> yogesh14051998@gmail.com</a>
         <a href="tel:+919791858063"><span class="ic">📞</span> +91 97918 58063</a>
-        <a href="#"><span class="ic">📍</span> Remote · Worldwide</a>
+        <span class="loc"><span class="ic">📍</span> Remote · Worldwide</span>
       </div>
     </div>
   </section>
