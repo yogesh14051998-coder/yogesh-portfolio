@@ -1,0 +1,11 @@
+# Local dev tooling (preview server / launch config)
+.claude/
+
+# Unused source photos (not referenced by the site)
+images/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
