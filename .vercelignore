@@ -1,0 +1,6 @@
+# Don't upload local tooling, source photos, or git internals to Vercel
+.claude
+images
+.git
+.gitignore
+.vercel
